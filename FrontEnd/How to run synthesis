@@ -1,0 +1,24 @@
+dc_shell
+dc_shell> source run2.tcl
+
+
+Look inside the synthesis directories:
+ls synthesis/results
+
+  
+                counter8bit_syn.v
+                counter8bit.ddc
+                counter8bit.sdf
+                counter8bit_out.sdc
+
+
+
+ls synthesis/reports
+                area.rpt
+                power.rpt
+                timing.rpt
+                qor.rpt
+                constraint.rpt
+
+
+To open the synthesized Verilog netlist: gvim synthesis/results/counter8bit_syn.v
