@@ -1,0 +1,159 @@
+====================================================
+              POST-CTS QoR
+====================================================
+****************************************
+Report : qor
+Design : counter8bit
+Version: U-2022.12-SP6
+Date   : Thu Aug 27 15:38:54 2026
+****************************************
+
+
+Scenario           'default'
+Timing Path Group  '**in2reg_default**'
+----------------------------------------
+Levels of Logic:                      1
+Critical Path Length:              1.02
+Critical Path Slack:               0.83
+Critical Path Clk Period:          2.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  '**reg2out_default**'
+----------------------------------------
+Levels of Logic:                      1
+Critical Path Length:              0.18
+Critical Path Slack:               0.62
+Critical Path Clk Period:          2.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                      3
+Critical Path Length:              0.45
+Critical Path Slack:               1.33
+Critical Path Clk Period:          2.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              0
+Hierarchical Port Count:              0
+Leaf Cell Count:                     35
+Buf/Inv Cell Count:                  15
+Buf Cell Count:                       9
+Inv Cell Count:                       6
+Combinational Cell Count:            27
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:                8
+   Integrated Clock-Gating Cell Count:                     0
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       8
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:               87.17
+Noncombinational Area:            56.93
+Buf/Inv Area:                     59.72
+Total Buffer Area:                51.85
+Total Inverter Area:               7.88
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                     346.38
+Net YLength:                     163.05
+----------------------------------------
+Cell Area (netlist):                            144.10
+Cell Area (netlist and physical only):          144.10
+Net Length:                      509.43
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:                41
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+====================================================
+              CTS COMPLETED
+====================================================
+
+
+
+icc2_shell> report_timing
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : counter8bit
+Version: U-2022.12-SP6
+Date   : Thu Aug 27 15:39:03 2026
+****************************************
+
+  Startpoint: count_reg[5] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: count[5] (output port clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: **reg2out_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.00      0.00
+
+  count_reg[5]/CLK (DFFARX1_RVT)                   0.00      0.00 r
+  count_reg[5]/Q (DFFARX1_RVT)                     0.07      0.07 f
+  copt_h_inst_586/Y (DELLN1X2_RVT)                 0.10      0.18 f
+  count[5] (out)                                   0.00      0.18 f
+  data arrival time                                          0.18
+
+  clock clk (rise edge)                            2.00      2.00
+  clock network delay (propagated)                 0.00      2.00
+  clock uncertainty                               -0.20      1.80
+  output external delay                           -1.00      0.80
+  data required time                                         0.80
+  ------------------------------------------------------------------------
+  data required time                                         0.80
+  data arrival time                                         -0.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.62
+
+
+1
+
