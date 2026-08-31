@@ -1,0 +1,98 @@
+****************************************
+Report : clock
+Design : counter8bit
+Mode   : default
+Version: U-2022.12-SP6
+Date   : Thu Aug 27 14:23:37 2026
+****************************************
+
+
+Attributes:
+    p - Propagated clock
+    G - Generated  clock
+    U - Unexpanded generated clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk              2.00   {0 1}                         {clk}
+
+****************************************
+Report : design
+Design : counter8bit
+Version: U-2022.12-SP6
+Date   : Thu Aug 27 14:23:37 2026
+****************************************
+
+Total number of std cells in library : 340
+Total number of dont_use lib cells   : 25
+Total number of dont_touch lib cells : 25
+Total number of buffers              : 23
+Total number of inverters            : 15
+Total number of flip-flops           : 106
+Total number of latches              : 12
+Total number of ICGs                 : 12
+
+Cell Instance Type  Count         Area
+--------------------------------------
+TOTAL LEAF CELLS       26       92.254
+unit                   26       92.254
+Standard cells         26       92.254
+unit                   26       92.254
+Hard macro cells        0        0.000
+unit                   26       92.254
+Soft macro cells        0        0.000
+unit                   26       92.254
+Always on cells         0        0.000
+unit                   26       92.254
+Physical only           0        0.000
+unit                   26       92.254
+Fixed cells             0        0.000
+unit                   26       92.254
+Moveable cells         26       92.254
+unit                   26       92.254
+Placed cells            0        0.000
+unit                   26       92.254
+Sequential              8       56.928
+unit                   26       92.254
+Buffer/inverter         6        7.878
+unit                   26       92.254
+ICG cells               0        0.000
+unit                   26       92.254
+
+Logic Hierarchies                    : 0
+Design Masters count                 : 11
+Total Flat nets count                : 30
+Total FloatingNets count             : 0
+Total no of Ports                    : 10
+Number of Master Clocks in design    : 1
+Number of Generated Clocks in design : 0
+Number of Path Groups in design      : 7 (1 of them Non Default)
+Number of Scan Chains in design      : 0
+List of Modes                        : default
+List of Corners                      : default
+List of Scenarios                    : default
+
+Core Area                            : 0.000
+Chip Area                            : 0.000
+Total Site Row Area                  : 0.000
+Number of Blockages                  : 0
+Total area of Blockages              : 0.000
+Number of Power Domains              : 1
+Number of Voltage Areas              : 1
+Number of Group Bounds               : 0
+Number of Exclusive MoveBounds       : 0
+Number of Hard or Soft MoveBounds    : 0
+Number of Multibit Registers         : 0
+Number of Multibit LS/ISO Cells      : 0
+Number of Top Level RP Groups        : 0
+Number of Tech Layers                : 71 (71 of them have unknown routing dir.)
+
+Total wire length                    : 0.00 micron
+Total number of wires                : 0
+Total number of contacts             : 0
+==================================================
+ICC2 INITIAL SETUP COMPLETED
+==================================================
+icc2_shell> 
+
+
