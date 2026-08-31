@@ -2,7 +2,8 @@
 # ICC2 Initial Setup - 8-bit Counter
 ############################################################
 
-set DESIGN_NAME "counter8bit_lib"
+set LIB_NAME "counter8bit_lib"
+set DESIGN_NAME "counter8bit"
 
 set TECH_FILE \
 "/home/synopsys/synopsys_tools/tech_libs/lib32nm/edk32nm/SAED32_EDK/tech/milkyway/saed32nm_1p9m_mw.tf"
@@ -24,15 +25,15 @@ set TLUPLUS \
 # 1. Create design library
 ############################################################
 
-if {[file exists $DESIGN_NAME]} {
-    file delete -force $DESIGN_NAME
+if {[file exists $LIB_NAME]} {
+    file delete -force $LIB_NAME
 }
 
-create_lib $DESIGN_NAME \
+create_lib $LIB_NAME \
     -technology $TECH_FILE \
     -ref_libs $REF_LIB
 
-current_lib $DESIGN_NAME
+current_lib $LIB_NAME
 
 
 ############################################################
@@ -61,7 +62,8 @@ read_parasitic_tech \
 
 set_parasitic_parameters \
     -early_spec nominal_rc \
-    -late_spec nominal_rc
+    -late_spec nominal_rc \
+    -corners default
 
 
 ############################################################
@@ -70,11 +72,8 @@ set_parasitic_parameters \
 
 report_clocks
 report_design
+report_parasitic_parameters
 
 puts "=================================================="
 puts "ICC2 INITIAL SETUP COMPLETED"
 puts "=================================================="
-
-
-
-
