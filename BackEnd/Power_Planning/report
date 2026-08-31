@@ -1,0 +1,109 @@
+icc2_shell> source scripts/power_planning.tcl
+====================================================
+        START POWER PLANNING
+====================================================
+Creating VDD/VSS PG nets...
+Error: Net 'VDD' already exists. (DES-150)
+Error: Net 'VSS' already exists. (DES-150)
+VDD net: _sel3100
+VSS net: _sel3101
+Creating standard-cell rail pattern...
+Information: The command 'create_pg_std_cell_conn_pattern' cleared the undo history. (UNDO-016)
+Pattern stdcell_rail_pattern exists and is re-defined.
+Successfully create standard cell rail pattern stdcell_rail_pattern.
+Creating core power ring pattern...
+Pattern core_ring_pattern exists and is re-defined.
+Successfully create PG ring pattern core_ring_pattern.
+Creating core PG strategy...
+Successfully set PG strategy core_ring_strategy.
+Creating standard-cell rail strategy...
+Successfully set PG strategy stdcell_rail_strategy.
+Compiling power grid...
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy core_ring_strategy.
+Updating strategy stdcell_rail_strategy.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating rings.
+Creating standard cell rails.
+Creating standard cell rails for strategy stdcell_rail_strategy.
+Error: Failed to get pin bbox from net VDD for rail creation. Rail width and layer need to be specified for manual rail creation. (PGR-999)
+Error: Failed to get pin bbox from net VDD for rail creation. (PGR-081)
+Error: Failed to create rail for one region of strategy : stdcell_rail_strategy (PGR-999)
+Creating 0 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via connection between strategies and existing shapes.
+Via DRC checking runtime 0.00 seconds.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy core_ring_strategy.
+Checking 8 stacked vias:0% 10% 20% 30% 50% 60% 70% 80% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 8 wires.
+Committed 8 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+====================================================
+        CHECKING PG CONNECTIVITY
+====================================================
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 26
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 4
+Number of VDD Vias: 4
+Number of VDD Terminals: 0
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 4
+Number of VSS Vias: 4
+Number of VSS Terminals: 0
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+====================================================
+        CHECKING PG DRC
+====================================================
+Command check_pg_drc started  at Thu Aug 27 15:04:30 2026
+Command check_pg_drc finished at Thu Aug 27 15:04:30 2026
+CPU usage for check_pg_drc: 0.00 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.00 seconds ( 0.00 hours)
+No errors found.
+Information: Saving 'counter8bit_lib:counter8bit.design' to 'counter8bit_lib:power_planning_finished.design'. (DES-028)
+====================================================
+        POWER PLANNING COMPLETED
+====================================================
