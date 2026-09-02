@@ -1,0 +1,4 @@
+[synopsys@synopsysclient06 synopsys_tools]$ ls
+CLIBs           gnubin  icc2         idq    primewave  syn        txs  verdi
+customcompiler  hspice  icvalidator  prime  starrc     tech_libs  vcs  verdi_supp
+
