@@ -1,0 +1,7 @@
+pt_shell is in /home/synopsys/synopsys_tools/prime/U-2022.12-SP5-1/bin/pt_shell 
+
+  
+
+export PT_HOME=/home/synopsys/synopsys_tools/prime/U-2022.12-SP5-1
+export SNPSLMD_LICENSE_FILE=27020@synopsysserver
+export PATH=$PT_HOME/bin:$PATH
