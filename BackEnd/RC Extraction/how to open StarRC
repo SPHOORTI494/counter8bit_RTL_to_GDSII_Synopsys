@@ -1,0 +1,15 @@
+export STARRC_HOME=/home/synopsys/synopsys_tools/starrc/V-2023.12/linux64_starrc
+
+export SNPSLMD_LICENSE_FILE=27020@synopsysserver
+
+export LD_LIBRARY_PATH=$STARRC_HOME/lib:$STARRC_HOME/lib/shlib:$LD_LIBRARY_PATH
+
+export PATH=$STARRC_HOME/bin:$PATH
+
+ldd $STARRC_HOME/bin/StarXtract | grep -E 'tbb|not found'
+  
+              (should show libtbb.so.12 => /home/synopsys/synopsys_tools/starrc/V-2023.12/linux64_starrc/lib/libtbb.so.12)
+
+which StarXtract
+which StarXtractor
+$STARRC_HOME/bin/StarXtract star.cmd
