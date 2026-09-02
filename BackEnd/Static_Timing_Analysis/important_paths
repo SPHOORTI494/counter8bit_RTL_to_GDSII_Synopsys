@@ -1,0 +1,60 @@
+timing file : SS, 0.95 V, 125°C corner.
+            /home/synopsys/synopsys_tools/tech_libs/lib32nm/edk32nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db
+
+gate level netlist: 
+            /home/synopsys/Sphoorti2/synthesis/results/counter8bit_syn.v
+
+synthesis generated SDC: 2 ns clock, 0.2 ns uncertainty, 1 ns input/output delays
+            /home/synopsys/Sphoorti2/synthesis/results/counter8bit_out.sdc
+
+
+post route parasitics: 
+            /home/synopsys/Sphoorti2/backEnd/scripts/counter8bit.spef
+
+
+
+                 ┌─────────────────────┐
+                 │ counter8bit_syn.v   │
+                 │ Gate-level netlist  │
+                 └──────────┬──────────┘
+                            │
+                 ┌──────────▼──────────┐
+                 │ SAED32 RVT .db      │
+                 │ SS 0.95V 125°C      │
+                 └──────────┬──────────┘
+                            │
+                 ┌──────────▼──────────┐
+                 │ counter8bit_out.sdc │
+                 │ 500 MHz / 2 ns      │
+                 └──────────┬──────────┘
+                            │
+                 ┌──────────▼──────────┐
+                 │ counter8bit.spef    │
+                 │ StarRC post-route RC│
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                     ┌─────────────┐
+                     │ PrimeTime   │
+                     └──────┬──────┘
+                            │
+              ┌─────────────┼─────────────┐
+              ▼             ▼             ▼
+           SETUP          HOLD          SDF
+
+
+
+
+both SDCs are not identical.
+The synthesis-generated one explicitly applies output delays separately to:
+
+count[7]
+count[6]
+...
+count[0]
+
+while the original constraints file uses:
+
+set_output_delay 1.0 -clock clk [get_ports count]
+
+For this reason, use counter8bit_out.sdc for PT, since it is the SDC written out by synthesis and reflects the constraints actually applied to the synthesized design.
